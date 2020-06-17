@@ -112,8 +112,9 @@ function askForAnswer(z, s) {
       var r = z + s;
       if (r == input) {
         console.log("Thats right");
-        let total = correctAswers.push('Right')
-        console.log("You got: ",total);
+        correctAswers.push('Right')
+        // let total = correctAswers.push('Right')
+        // console.log("You got: ",total);
         // console.count(correctAswers);
       } else {
         console.log("Thats wrong");
@@ -121,18 +122,24 @@ function askForAnswer(z, s) {
       resolve();
     //   console.count(correctAswers);
     //  console.log(correctAswers);
+    //console.log(correctAswers.length);
     });
   });
 }
- 
+
+
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   for (let i = 0; i < answer; i++) {
     var z = Math.floor(getNumberOne(this.x));
     console.log(z);
     var s = Math.floor(getNumberTwo(this.y));
     console.log(s);
- 
     await askForAnswer(z, s);
   }
   rl.close();
+  console.log("You got: ",correctAswers.length, "/", answer, "right");
 });
+
+
+
+
