@@ -127,6 +127,13 @@ function askForAnswer(z, s) {
   });
 }
 
+var output = "";
+
+console.time("concatenation");
+
+for(var p = 1; p<1e6; p++){
+    output +=p;
+}
 
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   for (let i = 0; i < answer; i++) {
@@ -138,6 +145,7 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   }
   rl.close();
   console.log("You got: ",correctAswers.length, "/", answer, "right");
+  console.timeEnd("concatenation");
 });
 
 
