@@ -99,26 +99,28 @@ function getNumberTwo(min = 1, max = 100) {
 }
 
 let correctAswers = [];
-var sum = correctAswers.reduce(function(a, b){
-    return a + b;
-}, 0);
+// var sum = correctAswers.reduce(function(a, b){
+//     return a + b;
+// }, 0);
  
+// console.log(sum); // Prints: 15
 
-console.log(sum); // Prints: 15
+
 function askForAnswer(z, s) {
   return new Promise((resolve) => {
     rl.question("Plese input your answers: ", (input) => {
       var r = z + s;
       if (r == input) {
         console.log("Thats right");
-        correctAswers.push(1);
+        let total = correctAswers.push('Right')
+        console.log("You got: ",total);
         // console.count(correctAswers);
       } else {
         console.log("Thats wrong");
       }
       resolve();
-      console.count(correctAswers);
-     //console.log(correctAswers);
+    //   console.count(correctAswers);
+    //  console.log(correctAswers);
     });
   });
 }
