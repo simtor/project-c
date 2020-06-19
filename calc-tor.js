@@ -1,4 +1,4 @@
-var validate = require("validate.js");
+// var validate = require("validate.js");
 const readline = require("readline");
  
 const rl = readline.createInterface({
@@ -17,56 +17,161 @@ function getNumberTwo(min = 1, max = 100) {
   var y = Math.random() * (max - min) + min;
   return y;
 }
-
+ 
 let correctAswers = [];
 // var sum = correctAswers.reduce(function(a, b){
 //     return a + b;
-// }, 0);
+// }, 0);-
  
 // console.log(sum); // Prints: 15
-
-
+ 
 function askForAnswer(z, s) {
   return new Promise((resolve) => {
-    rl.question("Plese input your answers: ", (input) => {
+    rl.question("Please input a number answer: ", (input) => {
       var r = z + s;
       if (r == input) {
         console.log("Thats right");
-        correctAswers.push('Right')
+        correctAswers.push("Right");
         // let total = correctAswers.push('Right')
         // console.log("You got: ",total);
         // console.count(correctAswers);
       } else {
         console.log("Thats wrong");
       }
-      resolve();
-    //   console.count(correctAswers);
-    //  console.log(correctAswers);
-    //console.log(correctAswers.length);
+      resolve(input);
+      //   console.count(correctAswers);
+      //  console.log(correctAswers);
+      //console.log(correctAswers.length);
     });
   });
 }
-
+ 
 var output = "";
-
+ 
 console.time("concatenation");
-
-for(var p = 1; p<1e6; p++){
-    output +=p;
+ 
+for (var p = 1; p < 1e6; p++) {
+  output += p;
 }
-
+ 
 rl.question("Enter the number of times you want to play: ", async (answer) => {
+ 
   for (let i = 0; i < answer; i++) {
+    const currentAnswer = null;
+ 
     var z = Math.floor(getNumberOne(this.x));
     console.log(z);
     var s = Math.floor(getNumberTwo(this.y));
     console.log(s);
-    await askForAnswer(z, s);
+ 
+    let questionAnswer = null;
+ 
+    while (questionAnswer === null || isNaN(questionAnswer)) {
+      questionAnswer = await askForAnswer(z, s);
+    }
   }
   rl.close();
-  console.log("You got: ",correctAswers.length, "/", answer, "right");
+  console.log("You got: ", correctAswers.length, "/", answer, "right");
+  var percentage = (correctAswers.length / answer);
+  console.log(Math.trunc(percentage*100));
   console.timeEnd("concatenation");
 });
+
+// // var validate = require("validate.js");
+// const readline = require("readline");
+ 
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+ 
+// const minimumNumber = 1;
+ 
+// function getNumberOne(min = 1, max = 100) {
+//   var x = Math.random() * (max - min) + min;
+//   return x;
+// }
+ 
+// function getNumberTwo(min = 1, max = 100) {
+//   var y = Math.random() * (max - min) + min;
+//   return y;
+// }
+
+// let correctAswers = [];
+// // var sum = correctAswers.reduce(function(a, b){
+// //     return a + b;
+// // }, 0);-
+ 
+// // console.log(sum); // Prints: 15
+
+
+// function askForAnswer(z, s) {
+//   return new Promise((resolve) => {
+//     rl.question("Plese input your answer: ", (input) => {
+//       var r = z + s;
+//       if (r == input) {
+//         console.log("Thats right");
+//         correctAswers.push('Right')
+//         // let total = correctAswers.push('Right')
+//         // console.log("You got: ",total);
+//         // console.count(correctAswers);
+//       } else {
+//         console.log("Thats wrong");
+//       }
+//       resolve();
+//     //   console.count(correctAswers);
+//     //  console.log(correctAswers);
+//     //console.log(correctAswers.length);
+//     });
+//   });
+// }
+
+// var output = "";
+
+// console.time("concatenation");
+
+// for(var p = 1; p<1e6; p++){
+//     output +=p;
+// }
+
+
+// rl.question("Enter the number of times you want to play: ", async (answer) => {
+//   //   if (answer === "") {
+//   //     console.log("Hello")
+//   //     console.log(`${answer}`)
+//   //     // user pressed OK, but the input field was empty
+//   // } else if (answer) {
+//   //   console.log("Hello2")
+//   //     // user typed something and hit OK
+//   // } else {
+//   //   console.log("Hello3")
+//   //     // user hit cancel
+//   // }
+//   for (let i = 0; i < answer; i++) {
+//     var z = Math.floor(getNumberOne(this.x));
+//     console.log(z);
+//     var s = Math.floor(getNumberTwo(this.y));
+//     console.log(s);
+//     await askForAnswer(z, s);
+//   }
+//   rl.close();
+//   console.log("You got: ",correctAswers.length, "/", answer, "right");
+//   var percentage = (correctAswers.length / answer);
+//   console.log(Math.trunc(percentage*100));
+//   console.timeEnd("concatenation");
+// });
+
+                        
+
+// for (let i = 0; i < answer; i++) {
+//   var z = Math.floor(getNumberOne(this.x));
+//   console.log(z);
+//   var s = Math.floor(getNumberTwo(this.y));
+//   console.log(s);
+//   await askForAnswer(z, s);
+// }
+
+
 // const readline = require('readline').createInterface({
 //   input: process.stdin,
 //   output: process.stdout
