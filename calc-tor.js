@@ -1,4 +1,3 @@
-// var validate = require("validate.js");
 const readline = require("readline");
  
 const rl = readline.createInterface({
@@ -19,12 +18,6 @@ function getNumberTwo(min = 1, max = 100) {
 }
  
 let correctAswers = [];
-// var sum = correctAswers.reduce(function(a, b){
-//     return a + b;
-// }, 0);-
- 
-// console.log(sum); // Prints: 15
- 
 function askForAnswer(z, s) {
   return new Promise((resolve) => {
     rl.question("Please input a number answer: ", (input) => {
@@ -32,16 +25,10 @@ function askForAnswer(z, s) {
       if (r == input) {
         console.log("Thats right");
         correctAswers.push("Right");
-        // let total = correctAswers.push('Right')
-        // console.log("You got: ",total);
-        // console.count(correctAswers);
       } else {
         console.log("Thats wrong");
       }
       resolve(input);
-      //   console.count(correctAswers);
-      //  console.log(correctAswers);
-      //console.log(correctAswers.length);
     });
   });
 }
@@ -55,17 +42,17 @@ for (var p = 1; p < 1e6; p++) {
 }
  
 rl.question("Enter the number of times you want to play: ", async (answer) => {
- 
+  let currentAnswer = null;
+    while (currentAnswer === null || isNaN(currentAnswer)) {
+      currentAnswer = answer;
+    }
   for (let i = 0; i < answer; i++) {
-    const currentAnswer = null;
- 
     var z = Math.floor(getNumberOne(this.x));
     console.log(z);
     var s = Math.floor(getNumberTwo(this.y));
     console.log(s);
  
     let questionAnswer = null;
- 
     while (questionAnswer === null || isNaN(questionAnswer)) {
       questionAnswer = await askForAnswer(z, s);
     }
