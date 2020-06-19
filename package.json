@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/simtor/project-c/issues"
   },
-  "homepage": "https://github.com/simtor/project-c#readme"
+  "homepage": "https://github.com/simtor/project-c#readme",
+  "dependencies": {
+    "validate.js": "^0.13.1"
+  }
 }
