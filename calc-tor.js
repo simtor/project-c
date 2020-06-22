@@ -41,30 +41,49 @@ for (var p = 1; p < 1e6; p++) {
   output += p;
 }
 
-
 function markResult(mark, percentage){
   var mark = (Math.trunc(percentage*100));
-  switch (mark){
-    case mark == 33:
-      console.log('unfortunately you failed better next time. :)');
-      break;
-    case mark == 50:
-      console.log("Congratulations you have a pass");
-      break;
-    case mark == 51-69:
-      console.log("You can do better, you nearly reached a merit");
-      break;
-    case mark == 70-89:
-      console.log("Congratulations you have a Merit");
-      break;
-    case mark == 90-100:
-      console.log("Congratulations you have a Distinction");
-      break;
-      default:
-        console.log("Something went wrong with the coded");
-  }
-  return markResult(mark);
+  if (mark < 0) {
+    console.log('unfortunately you failed better next time. :)');
+}
+else if (mark >= 0 && mark <= 49){
+  console.log('unfortunately you failed better next time. :)');
+}
+else if (mark >= 50 && mark <= 60) {
+  console.log("Congratulations you have a pass");
+}
+else if (mark >= 61 && mark<= 80) {
+  console.log("You can do better, you nearly reached a merit");
+}
+else if (mark >= 81 && mark<= 100) {
+  console.log("Congratulations you have a Distinction");
+}
+else {
+  console.log("Something went wrong with the coded");
+}
+return;
 } 
+  // switch (mark){
+  //   case (mark >=10 &&  <=33):
+  //     console.log('unfortunately you failed better next time. :)');
+  //     break;
+  //   case 50:
+  //     console.log("Congratulations you have a pass");
+  //     break;
+  //   case 51-69:
+  //     console.log("You can do better, you nearly reached a merit");
+  //     break;
+  //   case 70-89:
+  //     console.log("Congratulations you have a Merit");
+  //     break;
+  //   case 90-100:
+  //     console.log("Congratulations you have a Distinction");
+  //     break;
+  //     default:
+  //       console.log("Something went wrong with the coded");
+  // }
+  // // return markResult(mark);
+
  
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   let currentAnswer = null;
