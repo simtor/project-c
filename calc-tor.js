@@ -42,30 +42,30 @@ for (var p = 1; p < 1e6; p++) {
   output += p;
 }
 
-// function markResult(mark, percentage, result){
-  function markResult(mark, result){
-  // var mark = (Math.trunc(percentage*100))
-  console.log("This number: " ,mark)
-  if (mark < 0) {
-    result = console.log('unfortunately you failed better next time. :)');
-  }
-  else if (mark >= 0 && mark <= 49){
-    result = console.log('unfortunately you failed better next time. :)');
-  }
-  else if (mark >= 50 && mark <= 60) {
-    result = console.log("Congratulations you have a pass");
-  }
-  else if (mark >= 61 && mark<= 80) {
-    result = console.log("Congratulations you have a merit");
-  }
-  else if (mark >= 81 && mark<= 100) {
-    result = console.log("Congratulations you have a Distinction");
-  }
-  else {
-    result = console.log("Something went wrong with the coded");
-  }
-  return result;
-} 
+// // function markResult(mark, percentage, result){
+//   function markResult(mark, result){
+//   // var mark = (Math.trunc(percentage*100))
+//   console.log("This number: " ,mark)
+//   if (mark < 0) {
+//     result = console.log('unfortunately you failed better next time. :)');
+//   }
+//   else if (mark >= 0 && mark <= 49){
+//     result = console.log('unfortunately you failed better next time. :)');
+//   }
+//   else if (mark >= 50 && mark <= 60) {
+//     result = console.log("Congratulations you have a pass");
+//   }
+//   else if (mark >= 61 && mark<= 80) {
+//     result = console.log("Congratulations you have a merit");
+//   }
+//   else if (mark >= 81 && mark<= 100) {
+//     result = console.log("Congratulations you have a Distinction");
+//   }
+//   else {
+//     result = console.log("Something went wrong with the coded");
+//   }
+//   return result;
+// } 
  
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   let currentAnswer = null;
@@ -88,7 +88,27 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   var percentage = (correctAswers.length / answer);
   var mark = (Math.trunc(percentage*100));
   console.log(mark);
-   markResult(this.result);
+    // var mark = (Math.trunc(percentage*100))
+    console.log("This number: " ,mark)
+    if (mark < 0) {
+      console.log('unfortunately you failed better next time. :)');
+    }
+    else if (mark >= 0 && mark <= 49){
+      console.log('unfortunately you failed better next time. :)');
+    }
+    else if (mark >= 50 && mark <= 60) {
+      console.log("Congratulations you have a pass");
+    }
+    else if (mark >= 61 && mark<= 80) {
+      console.log("Congratulations you have a merit");
+    }
+    else if (mark >= 81 && mark<= 100) {
+     console.log("Congratulations you have a Distinction");
+    }
+    else {
+      console.log("Something went wrong with the coded");
+    }
+  //  markResult(this.result);
   // markResult.call(percentage, markResult.mark);
   // conole.log(markResult.call(mark));
   console.timeEnd("concatenation");
