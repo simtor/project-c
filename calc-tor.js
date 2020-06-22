@@ -42,26 +42,26 @@ for (var p = 1; p < 1e6; p++) {
 }
 
 
-function markResult(mark){
-  var mark = percentage;
+function markResult(mark, percentage){
+  var mark = (Math.trunc(percentage*100));
   switch (mark){
-    case 0-49:
+    case mark == 33:
       conole.log('unfortunately you failed better next time. :)');
       break;
-    case 50:
+    case mark == 50:
       conole.log("Congratulations you have a pass");
       break;
-    case 51-69:
+    case mark == 51-69:
       conole.log("You can do better, you nearly reached a merit");
       break;
-    case 70-89:
+    case mark == 70-89:
       conole.log("Congratulations you have a Merit");
       break;
-    case 90-100:
+    case mark == 90-100:
       conole.log("Congratulations you have a Distinction");
       break;
       default:
-        conole.log("Something went wrong with the coded right");
+        console.log("Something went wrong with the coded");
   }
 } 
  
@@ -86,6 +86,7 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   var percentage = (correctAswers.length / answer);
   console.log(Math.trunc(percentage*100));
   console.log(markResult.mark);
+  // markResult.call(percentage, markResult.mark);
   // conole.log(markResult.call(mark));
   console.timeEnd("concatenation");
 });
