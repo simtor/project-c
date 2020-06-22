@@ -40,6 +40,16 @@ console.time("concatenation");
 for (var p = 1; p < 1e6; p++) {
   output += p;
 }
+
+
+function markResult(){
+  var mark = percentage;
+  switch (mark){
+    case 0-49:
+      conole.log('unfortunately you failed better next time. :)');
+      break; 
+  }
+} 
  
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   let currentAnswer = null;
@@ -61,6 +71,7 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   console.log("You got: ", correctAswers.length, "/", answer, "right");
   var percentage = (correctAswers.length / answer);
   console.log(Math.trunc(percentage*100));
+  console.log(markResult(this.mark));
   console.timeEnd("concatenation");
 });
 
