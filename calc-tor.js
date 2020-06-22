@@ -46,23 +46,24 @@ function markResult(mark, percentage){
   var mark = (Math.trunc(percentage*100));
   switch (mark){
     case mark == 33:
-      conole.log('unfortunately you failed better next time. :)');
+      console.log('unfortunately you failed better next time. :)');
       break;
     case mark == 50:
-      conole.log("Congratulations you have a pass");
+      console.log("Congratulations you have a pass");
       break;
     case mark == 51-69:
-      conole.log("You can do better, you nearly reached a merit");
+      console.log("You can do better, you nearly reached a merit");
       break;
     case mark == 70-89:
-      conole.log("Congratulations you have a Merit");
+      console.log("Congratulations you have a Merit");
       break;
     case mark == 90-100:
-      conole.log("Congratulations you have a Distinction");
+      console.log("Congratulations you have a Distinction");
       break;
       default:
         console.log("Something went wrong with the coded");
   }
+  return markResult(mark);
 } 
  
 rl.question("Enter the number of times you want to play: ", async (answer) => {
@@ -85,7 +86,7 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   console.log("You got: ", correctAswers.length, "/", answer, "right");
   var percentage = (correctAswers.length / answer);
   console.log(Math.trunc(percentage*100));
-  console.log(markResult.mark);
+  markResult(this.mark);
   // markResult.call(percentage, markResult.mark);
   // conole.log(markResult.call(mark));
   console.timeEnd("concatenation");
