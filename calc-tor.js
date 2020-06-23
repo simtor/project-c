@@ -1,5 +1,4 @@
 const readline = require("readline");
-const { result } = require("validate.js");
  
 const rl = readline.createInterface({
   input: process.stdin,
@@ -84,7 +83,7 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   console.log("You got: ", correctAswers.length, "/", answer, "right");
   var percentage = (correctAswers.length / answer);
   var mark = (Math.trunc(percentage*100));
-  console.log(mark);
+  console.log(mark, "%");
    markResult(mark);
   console.timeEnd("concatenation");
 });
