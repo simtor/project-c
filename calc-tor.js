@@ -70,9 +70,10 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
     }
   for (let i = 0; i < answer; i++) {
     var z = Math.floor(getNumberOne(this.x));
-    console.log(z);
+    // console.log(z);
     var s = Math.floor(getNumberTwo(this.y));
-    console.log(s);
+    // console.log(s);
+    console.log(z, "+", s);
  
     let questionAnswer = null;
     while (questionAnswer === null || isNaN(questionAnswer)) {
