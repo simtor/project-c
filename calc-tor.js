@@ -16,6 +16,18 @@ function getNumberTwo(min = 1, max = 100) {
   var y = Math.random() * (max - min) + min;
   return y;
 }
+
+
+function validateNumber(q){
+  if (z>s){      
+    var q = Math.random() * (max - min) + min;
+    console.log("Number Changed");
+    console.log(q, "+", s);
+  }else{
+    console.log("Your a genius")
+  }
+  return q
+}
  
 let correctAswers = [];
 function askForAnswer(z, s) {
@@ -62,16 +74,18 @@ for (var p = 1; p < 1e6; p++) {
   }
   return mark
 } 
- 
+
+
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   let currentAnswer = null;
     while (currentAnswer === null || isNaN(currentAnswer)) {
       currentAnswer = answer;
     }
+
   for (let i = 0; i < answer; i++) {
     var z = Math.floor(getNumberOne(this.x));
-    // console.log(z);
     var s = Math.floor(getNumberTwo(this.y));
+    // console.log(z);
     // console.log(s);
     console.log(z, "+", s);
  
@@ -86,6 +100,7 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
   var mark = (Math.trunc(percentage*100));
   console.log(mark, "%");
    markResult(mark);
+  validateNumber(q);
   console.timeEnd("concatenation");
 });
 
