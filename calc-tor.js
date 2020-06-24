@@ -17,17 +17,17 @@ function getNumberTwo(min = 1, max = 100) {
   return y;
 }
 
-
-function validateNumber(q){
-  if (z>s){      
+function validateNumber(x,y){
+  if (x>=y){      
     var q = Math.random() * (max - min) + min;
     console.log("Number Changed");
-    console.log(q, "+", s);
+    console.log(q, "+", y);
   }else{
     console.log("Your a genius")
   }
-  return q
+  return x,y;
 }
+
  
 let correctAswers = [];
 function askForAnswer(z, s) {
@@ -72,9 +72,9 @@ for (var p = 1; p < 1e6; p++) {
   else {
     console.log("Something went wrong with the coded");
   }
-  return mark
+  return mark;
 } 
-
++
 
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   let currentAnswer = null;
@@ -83,24 +83,25 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
     }
 
   for (let i = 0; i < answer; i++) {
+    // validateNumber(x,y);
     var z = Math.floor(getNumberOne(this.x));
     var s = Math.floor(getNumberTwo(this.y));
+    // var b = Math.floor(validateNumber(this.q));
     // console.log(z);
     // console.log(s);
     console.log(z, "+", s);
- 
     let questionAnswer = null;
     while (questionAnswer === null || isNaN(questionAnswer)) {
       questionAnswer = await askForAnswer(z, s);
     }
   }
+
   rl.close();
   console.log("You got: ", correctAswers.length, "/", answer, "right");
   var percentage = (correctAswers.length / answer);
   var mark = (Math.trunc(percentage*100));
   console.log(mark, "%");
    markResult(mark);
-  validateNumber(q);
   console.timeEnd("concatenation");
 });
 
