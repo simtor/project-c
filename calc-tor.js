@@ -7,10 +7,6 @@ const rl = readline.createInterface({
  
 const minimumNumber = 1;
 
-// rl.question("Please Input what range you want: : ", (input) => {
- 
-// });
- 
 function getNumberOne(min = 1, max = 100) {
   var x = Math.random() * (max - min) + min;
   return x;
@@ -21,14 +17,6 @@ function getNumberTwo(min = 1, max = 100) {
   return y;
 }
 
-// function validateNumber(x,y,z){
-//   if (x>=y){
-//     var z = Math.floor(getNumberOne(this.x));   
-//   }else{
-//     console.log("Your a genius")
-//   }
-//   return x,y,z;
-// }
 
  
 let correctAswers = [];
@@ -85,13 +73,13 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
     }
 
   for (let i = 0; i < answer; i++) {
-    // validateNumber(x,y);
     var z = Math.floor(getNumberOne(this.x));
     var s = Math.floor(getNumberTwo(this.y));
-    // var b = Math.floor(validateNumber(this.q));
-    // console.log(z);
-    // console.log(s);
+    if(s>=z){
+      console.log(s, "+", z);
+    }else{
     console.log(z, "+", s);
+    }
     let questionAnswer = null;
     while (questionAnswer === null || isNaN(questionAnswer)) {
       questionAnswer = await askForAnswer(z, s);
