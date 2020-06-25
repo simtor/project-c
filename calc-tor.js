@@ -17,8 +17,6 @@ function getNumberTwo(min = 1, max = 100) {
   return y;
 }
 
-
- 
 let correctAswers = [];
 function askForAnswer(z, s) {
   return new Promise((resolve) => {
