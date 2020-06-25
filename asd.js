@@ -5,30 +5,24 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
  
-const minimumNumber = 1;
-
-// rl.question("Please Input what range you want: : ", (input) => {
+// rl.question("Please Input what range you want: ", (range) => {
+  
+//     rl.close();
+//   });
  
-// });
- 
-function getNumberOne(min = 1, max = 100) {
-  var x = Math.random() * (max - min) + min;
-  return x;
+function getNumberOne(min = 1, max) {
+    rl.question("Please input range: ", (range)=>{
+        var max  = range;
+        console.log(max);
+        var x = Math.random() * (max - min) + min;
+        return x;
+    });
 }
  
 function getNumberTwo(min = 1, max = 100) {
-  var y = Math.random() * (max - min) + min;
+  var y = Math.random() * (max- min) + min;
   return y;
 }
-
-// function validateNumber(x,y,z){
-//   if (x>=y){
-//     var z = Math.floor(getNumberOne(this.x));   
-//   }else{
-//     console.log("Your a genius")
-//   }
-//   return x,y,z;
-// }
 
  
 let correctAswers = [];
@@ -85,12 +79,8 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
     }
 
   for (let i = 0; i < answer; i++) {
-    // validateNumber(x,y);
     var z = Math.floor(getNumberOne(this.x));
     var s = Math.floor(getNumberTwo(this.y));
-    // var b = Math.floor(validateNumber(this.q));
-    // console.log(z);
-    // console.log(s);
     console.log(z, "+", s);
     let questionAnswer = null;
     while (questionAnswer === null || isNaN(questionAnswer)) {
@@ -106,12 +96,3 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
    markResult(mark);
   console.timeEnd("concatenation");
 });
-
-
-
-
-
-
-
-
-
