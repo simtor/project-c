@@ -1,7 +1,6 @@
 # project-c
 
 It's a small game that allows the user to get the brain warm up in the morning.
-The game:
 
 - The game is based on adding numbers together as fast as possible.
 - The game ask for how question you would like?
