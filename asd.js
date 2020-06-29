@@ -34,20 +34,20 @@
 
 
 
-function rick(){
-  console.log("Let's get Schwifty!");
-}
+// function rick(){
+//   console.log("Let's get Schwifty!");
+// }
 
-let morty = function(){
-  //console.log("I don't think that this is such a good idea Rick.");
-  console.log(this)
+// let morty = function(){
+//   //console.log("I don't think that this is such a good idea Rick.");
+//   console.log(this)
 
-};
+// };
 
 
-let summer = f1=>{
-  console.log("About to call another function");
-}
+// let summer = f1=>{
+//   console.log("About to call another function");
+// }
 
 
 // morty();

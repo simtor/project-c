@@ -92,12 +92,3 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
    markResult(mark);
   console.timeEnd("concatenation");
 });
-
-
-
-
-
-
-
-
-
