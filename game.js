@@ -61,8 +61,7 @@ for (var p = 1; p < 1e6; p++) {
     console.log("Something went wrong with the coded");
   }
   return mark;
-} 
-+
+}
 
 rl.question("Enter the number of times you want to play: ", async (answer) => {
   let currentAnswer = null;
