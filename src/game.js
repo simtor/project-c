@@ -18,10 +18,10 @@ function getNumberTwo(min = 1, max = 100) {
 }
 
 let correctAswers = [];
-function askForAnswer(z, s) {
+function askForAnswer(number1, number2) {
   return new Promise((resolve) => {
     rl.question("Please input a number answer: ", (input) => {
-      var r = z + s;
+      var r = number1 + number2;
       if (r == input) {
         console.log("Thats right");
         correctAswers.push("Right");
@@ -70,16 +70,16 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
     }
 
   for (let i = 0; i < answer; i++) {
-    var z = Math.floor(getNumberOne(this.x));
-    var s = Math.floor(getNumberTwo(this.y));
-    if(s>=z){
-      console.log(s, "+", z);
+    var number1 = Math.floor(getNumberOne(this.x));
+    var number2 = Math.floor(getNumberTwo(this.y));
+    if(number2>=number1){
+      console.log(number2, "+", number1);
     }else{
-    console.log(z, "+", s);
+    console.log(number1, "+", number2);
     }
     let questionAnswer = null;
     while (questionAnswer === null || isNaN(questionAnswer)) {
-      questionAnswer = await askForAnswer(z, s);
+      questionAnswer = await askForAnswer(number1, number2);
     }
   }
 
