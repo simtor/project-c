@@ -64,10 +64,10 @@ for (var p = 1; p < 1e6; p++) {
 }
 
 rl.question("Enter the number of times you want to play: ", async (answer) => {
-  let currentAnswer = null;
-    while (currentAnswer === null || isNaN(currentAnswer)) {
-      currentAnswer = answer;
-    }
+  // let currentAnswer = null;
+  //   while (currentAnswer === null || isNaN(currentAnswer)) {
+  //     currentAnswer = await currentAnswer(answer);
+  //   }
 
   for (let i = 0; i < answer; i++) {
     var number1 = Math.floor(getNumberOne(this.x));
