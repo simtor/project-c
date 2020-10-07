@@ -29,9 +29,7 @@ function askForAnswer(number1, number2) {
 }
  
 let output = "";
- 
 console.time("concatenation");
- 
 for (let p = 1; p < 1e6; p++) {
   output += p;
 }
