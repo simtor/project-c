@@ -60,6 +60,8 @@ rl.question("Enter the number of times you want to play: ", async (answer) => {
     let number2 = Math.floor(getNumberTwo(this.y));
     if(number2>=number1){
       console.log(number2, "+", number1);
+    }else if (answer==="q"||"Q"){
+      rl.close
     }else{
     console.log(number1, "+", number2);
     }
