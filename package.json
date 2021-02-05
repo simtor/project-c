@@ -4,7 +4,7 @@
   "description": "Build a simple game",
   "main": "Random-selector.js",
   "scripts": {
-    "start":"node src/game.js",
+    "start": "node src/game.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
